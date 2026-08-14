@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "agent/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Select Swift 6.2 toolchain
+        run: sudo xcode-select --switch /Applications/Xcode_26.0.1.app
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+
+      - name: Run Swift tests
+        run: xcrun swift test
+
+      - name: Build app product
+        run: xcrun swift build -c release --product SwitchGPTApp
+
+      - name: Build product website
+        working-directory: website
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run cross-process matrix
+        run: xcrun swift run SwitchGPTSafetySimulator matrix
+
+      - name: Validate scripts
+        run: |
+          bash -n script/build_and_run.sh
+          for script in Scripts/*.sh; do bash -n "$script"; done
+
+      - name: Audit public repository
+        run: ./Scripts/audit-public-repo.sh
+
+      - name: Build and audit exact public export
+        run: |
+          ./Scripts/create-public-export.sh
+          ./Scripts/audit-public-repo.sh --root .build/public-export --strict

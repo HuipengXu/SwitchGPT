@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.switchgpt.recovery-at-login</string>
+	<key>BundleProgram</key>
+	<string>Contents/Library/LaunchServices/SwitchGPTBootRecovery</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>SwitchGPTBootRecovery</string>
+    <string>recover-at-login</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>LaunchOnlyOnce</key>
+  <true/>
+  <key>LimitLoadToSessionType</key>
+  <string>Aqua</string>
+</dict>
+</plist>
