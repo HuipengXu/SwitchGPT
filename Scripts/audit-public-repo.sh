@@ -27,6 +27,25 @@ cd "$scan_root"
 
 failures=0
 
+retired_submit_pattern='launchctl[[:space:]]+sub''mit'
+runtime_roots=()
+for candidate in App Lifecycle Scripts Sources script; do
+  if [[ -e "$candidate" ]]; then
+    runtime_roots+=("$candidate")
+  fi
+done
+
+if [[ "${#runtime_roots[@]}" -gt 0 ]]; then
+  retired_submit_paths="$(/usr/bin/rg -Il --hidden "$retired_submit_pattern" "${runtime_roots[@]}" 2>/dev/null || true)"
+  if [[ -n "$retired_submit_paths" ]]; then
+    while IFS= read -r path; do
+      [[ -n "$path" ]] || continue
+      echo "retired submitted-job control path detected in: $path" >&2
+      failures=$((failures + 1))
+    done <<< "$retired_submit_paths"
+  fi
+fi
+
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   tracked_paths=(git ls-files -z)
 else

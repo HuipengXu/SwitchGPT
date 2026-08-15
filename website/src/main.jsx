@@ -179,7 +179,7 @@ function Hero({ selected, onSelect }) {
     <section className="hero section-frame" id="top">
       <div className="hero-copy">
         <h1>See every account at a glance.</h1>
-        <p>A small macOS utility for monitoring usage across your ChatGPT desktop accounts.</p>
+        <p>An open-source macOS alpha for exploring multi-account quota UI with safe mock data.</p>
         <div className="hero-links">
           <a className="text-link" href="#product">Explore the project <ArrowIcon /></a>
           <a className="text-link" href="#safety">Read the safety boundary <ArrowIcon /></a>
@@ -200,11 +200,11 @@ function ProductSection({ selected, onSelect }) {
       </div>
       <div className="product-section-copy">
         <h2>Usage, without the guesswork.</h2>
-        <p>SwitchGPT reads local app data to show direct quota status for each of your ChatGPT desktop identities—no switching required.</p>
+        <p>The current alpha uses mock accounts and quota data. A read-only quota adapter is included for review but is not wired into the default app.</p>
         <div className="feature-list">
-          <FeatureRow icon="accounts" title="All accounts" copy="See every ChatGPT desktop account you’ve added, in one simple list." />
-          <FeatureRow icon="quota" title="Direct quota" copy="View the same weekly quota you see in the app, shown as a percentage." />
-          <FeatureRow icon="safety" title="Safe by default" copy="Real switching stays off by default. You’re always in control." />
+          <FeatureRow icon="accounts" title="Flexible accounts" copy="Preview any number of mock identities in one simple list." />
+          <FeatureRow icon="quota" title="Quota-ready UI" copy="Review weekly usage and an optional five-hour window when data provides it." />
+          <FeatureRow icon="safety" title="Safe alpha" copy="Real desktop switching is not included in this build." />
         </div>
       </div>
     </section>
@@ -227,16 +227,16 @@ function SafetySection() {
         <div className="safety-copy">
           <h2>Every account,<br />one clear view.</h2>
           <div className="safety-notes">
-            <p><span className="note-icon">◇</span>Real switching stays off by default.</p>
-            <p><span className="note-icon">&lt;/&gt;</span>Open source. Read-only first.</p>
+            <p><span className="note-icon">◇</span>Real switching is not shipped.</p>
+            <p><span className="note-icon">&lt;/&gt;</span>Open source. Mock and read-only first.</p>
           </div>
         </div>
         <div className="boundary-flow" aria-label="SwitchGPT safety boundary">
-          <BoundaryStep title="Read local data only" kind="data" />
+          <BoundaryStep title="Use safe mock data" kind="data" />
           <ArrowIcon />
           <BoundaryStep title="Display quota and status" kind="display" />
           <ArrowIcon />
-          <BoundaryStep title="Off by default" copy="Enabled by you, when you choose" kind="switch" disabled />
+          <BoundaryStep title="Not shipped" copy="Real switching remains experimental" kind="switch" disabled />
         </div>
       </div>
     </section>
@@ -266,11 +266,11 @@ function ProcessSection() {
     <section className="process-section section-frame" id="process">
       <h2>How it works</h2>
       <div className="process-list">
-        <ProcessStep number="1" title="Add" copy="Add your ChatGPT desktop accounts to SwitchGPT." />
+        <ProcessStep number="1" title="Explore" copy="Add mock accounts and evaluate the macOS experience." />
         <ArrowIcon />
-        <ProcessStep number="2" title="Review" copy="See each account’s weekly quota at a glance." />
+        <ProcessStep number="2" title="Review" copy="See weekly quota and optional five-hour usage at a glance." />
         <ArrowIcon />
-        <ProcessStep number="3" title="Decide" copy="Stay in mock/read-only mode or enable real switching—it’s your call." />
+        <ProcessStep number="3" title="Contribute" copy="Inspect the safety boundaries and help improve the open-source alpha." />
       </div>
     </section>
   )

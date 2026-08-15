@@ -76,7 +76,7 @@ xcrun swift test
 xcrun swift run SwitchGPTSafetySimulator matrix
 ```
 
-当前结果为 26/26 场景通过，其中 17 个场景发生真实异常子进程退出；SwiftPM 单元测试为 121/121。boot 场景已调用独立 `SwitchGPTBootRecovery` executable，覆盖无命令、错误命令、无夹具环境、危险根目录、损坏状态、并发执行及内部目录 symlink 逃逸。Phase C 测试进一步验证同期开机不被误认成重启、新开机投递只记录一次、重复投递永久告警、后续开机与损坏证据失败关闭，以及注册武装发生在系统 mutation 之前。Phase D 夹具测试另外覆盖无凭据身份指纹、旧包保留、独立 artifact 槽位、升级失败关闭和恢复入口不重试。AppCore 测试覆盖 mock 额度读取、只读协议解码、模拟切换、超过两个账号的管理以及 `700/600` 本地 mock 状态持久化、损坏 JSON 和 symlink 拒绝。连续运行后没有遗留模拟器进程或临时矩阵目录。
+当前结果为 26/26 场景通过，其中 17 个场景发生真实异常子进程退出；SwiftPM 单元测试为 122/122。boot 场景已调用独立 `SwitchGPTBootRecovery` executable，覆盖无命令、错误命令、无夹具环境、危险根目录、损坏状态、并发执行及内部目录 symlink 逃逸。Phase C 测试进一步验证同期开机不被误认成重启、新开机投递只记录一次、重复投递永久告警、后续开机与损坏证据失败关闭，以及注册武装发生在系统 mutation 之前。Phase D 夹具测试另外覆盖无凭据身份指纹、旧包保留、独立 artifact 槽位、升级失败关闭和恢复入口不重试。AppCore 测试覆盖 mock 额度读取、只读协议解码、模拟切换、超过两个账号的管理以及 `700/600` 本地 mock 状态持久化、损坏 JSON 和 symlink 拒绝。静态控制面测试拒绝 submitted-job 控制器。连续运行后没有遗留模拟器进程或临时矩阵目录。
 
 ## 尚未证明
 

@@ -30,7 +30,7 @@ struct QuotaSummaryBar: View {
         VStack(alignment: .trailing, spacing: 3) {
           Text(account.displayName)
             .font(.subheadline.weight(.semibold))
-          Text((isCurrent ? "Current account · " : "Preview account · ") + String(accountCount) + " total")
+          Text((isCurrent ? "Current preview · " : "Preview account · ") + String(accountCount) + " total")
             .font(.caption)
             .foregroundStyle(.secondary)
         }

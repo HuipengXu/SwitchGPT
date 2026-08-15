@@ -31,7 +31,7 @@ struct AccountCardView: View {
           Spacer(minLength: 8)
 
           if isCurrent {
-            Label("Current", systemImage: "checkmark.circle.fill")
+            Label("Current preview", systemImage: "checkmark.circle.fill")
               .font(.caption.weight(.semibold))
               .foregroundStyle(.secondary)
           } else {
@@ -69,7 +69,7 @@ struct AccountCardView: View {
         }
 
         HStack {
-          Text(isCurrent ? "Active desktop identity" : "Click to preview this account")
+          Text(isCurrent ? "Selected mock account" : "Click to preview this mock account")
             .font(.caption)
             .foregroundStyle(.secondary)
           Spacer()
@@ -103,6 +103,6 @@ struct AccountCardView: View {
         Button("Remove mock account", role: .destructive, action: onRemove)
       }
     }
-    .accessibilityHint(isCurrent ? "This is the current account" : "Opens a safe simulation confirmation")
+    .accessibilityHint(isCurrent ? "This is the selected mock account" : "Opens a safe simulation confirmation")
   }
 }

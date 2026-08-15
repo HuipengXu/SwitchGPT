@@ -67,7 +67,7 @@ struct DashboardDetailView: View {
       Spacer()
 
       if isCurrent {
-        Label("Current identity", systemImage: "checkmark.circle.fill")
+        Label("Current preview", systemImage: "checkmark.circle.fill")
           .font(.caption.weight(.medium))
           .foregroundStyle(.secondary)
       } else if account != nil {
@@ -134,7 +134,7 @@ struct DashboardDetailView: View {
       VStack(alignment: .leading, spacing: 5) {
         Text("Safe preview mode")
           .font(.subheadline.weight(.semibold))
-        Text("Preview actions save mock metadata only. ChatGPT, credentials, launchd, and SMAppService are untouched.")
+        Text("All accounts and quotas in this build are mock data. ChatGPT, credentials, launchd, and SMAppService are untouched.")
           .font(.caption)
           .foregroundStyle(.secondary)
           .fixedSize(horizontal: false, vertical: true)

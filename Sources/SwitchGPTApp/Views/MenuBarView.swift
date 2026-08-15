@@ -85,7 +85,7 @@ struct MenuBarView: View {
 
   private func menuTitle(for account: AccountRecord) -> String {
     if account.id == store.currentAccountID {
-      return account.displayName + " · Current · " + quotaSummaryText(for: account)
+      return account.displayName + " · Current preview · " + quotaSummaryText(for: account)
     }
     return "Preview " + account.displayName + " · " + quotaSummaryText(for: account)
   }

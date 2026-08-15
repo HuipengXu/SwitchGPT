@@ -5,6 +5,9 @@
 - Prepare the macOS app and repository for public alpha distribution.
 - Add an explicit pre-release gate for a separately authorized real A↔B validation.
 - Keep the default app read-only/mock; real switching remains disabled.
+- Retire `launchctl submit` as a transaction host after the release-gate restart-loop incident.
+- Clarify throughout the app and website that accounts, selection, and quotas are previews in the public alpha.
+- Permit publishing the audited source repository separately from creating a tag or binary release.
 
 ## 0.1.0-alpha.1
 

@@ -48,7 +48,7 @@ xcrun swift run SwitchGPTSafetySimulator matrix
 
 预期证据：
 
-- 121 个单元测试全部通过。
+- 122 个单元测试全部通过。
 - 26 个跨进程场景全部通过，且并发注册/卸载预算各只有一个进程获得 reservation。
 - `validate-bundle = valid`、`registration-preflight = ready`。
 - `service-status` 只允许 `notRegistered` 或通过严格预检后的 `notFound`。
@@ -164,7 +164,7 @@ xcrun swift run SwitchGPTSafetySimulator matrix
 - 同一账号的凭据刷新只改变认证文件，不改变持久化的 SHA-256 身份指纹。
 - 旧服务卸载 → 新包独立安装 → 新服务注册顺序严格成立。
 - 候选验证、卸载、安装、注册、审批和恢复中断均有失败关闭测试。
-- Phase D 测试 10/10；全量 SwiftPM 测试 121/121；跨进程矩阵 26/26。另有隔离的 UI/mock 与只读协议 AppCore 测试，不接入系统服务。
+- Phase D 测试 10/10；全量 SwiftPM 测试 122/122；跨进程矩阵 26/26。另有隔离的 UI/mock、只读协议 AppCore 与运行时控制面禁用测试，不接入系统服务。
 
 真实系统阶段仍需单独验证：
 

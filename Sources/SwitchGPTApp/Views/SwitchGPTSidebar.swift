@@ -134,7 +134,7 @@ private struct AccountSidebarRow: View {
         Circle()
           .fill(.primary)
           .frame(width: 7, height: 7)
-          .accessibilityLabel("Current")
+          .accessibilityLabel("Current preview")
       }
     }
     .padding(.vertical, 3)

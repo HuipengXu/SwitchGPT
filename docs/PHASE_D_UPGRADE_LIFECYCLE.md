@@ -34,7 +34,7 @@ xcrun swift test --filter UpgradeLifecycleTests
 
 覆盖 10 个场景：成功顺序、候选包预检失败、旧服务卸载不确定、候选安装失败、注册/审批失败、崩溃后只观察恢复、身份指纹变化、同一 artifact 槽位拒绝和损坏日志失败关闭。
 
-当前结果：Phase D 10/10；全量 SwiftPM 测试 121/121；跨进程 Safety 矩阵 26/26。另有隔离的 AppCore mock/UI 与只读协议解码测试，不接入本阶段的真实生命周期。
+当前结果：Phase D 10/10；全量 SwiftPM 测试 122/122；跨进程 Safety 矩阵 26/26。另有隔离的 AppCore mock/UI、只读协议解码和运行时控制面禁用测试，不接入本阶段的真实生命周期。
 
 ## 未授权范围
 

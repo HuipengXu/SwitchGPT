@@ -23,3 +23,4 @@ Never include access tokens, refresh tokens, ID tokens, cookies, passwords, priv
 - The read-only adapter stages only a restricted copy outside the repository and requires a pinned identity hash.
 - Safety Core tests operate only on temporary fixtures.
 - System service mutation and real desktop switching require separate explicit authorization and are not part of normal development or CI.
+- Runtime sources and scripts must not use `launchctl submit`; the retired mechanism caused repeated relaunches during private validation.

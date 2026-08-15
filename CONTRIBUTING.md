@@ -11,7 +11,7 @@ Contributions are welcome for:
 - the isolated Safety Core and its temporary-fixture tests;
 - documentation, accessibility, packaging, and CI.
 
-Do not add code that silently reads, writes, replaces, or prints real authentication material. Real ChatGPT account switching remains an explicit, disabled experiment; a separately authorized real A↔B validation is a release gate, not a default product capability.
+Do not add code that silently reads, writes, replaces, or prints real authentication material. Real ChatGPT account switching remains a suspended, disabled experiment and is not a default product capability. Runtime code and scripts must not use `launchctl submit` as a transaction host.
 
 ## Development setup
 
